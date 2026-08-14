@@ -1,0 +1,284 @@
+﻿2026-08-14T06:25:04.7992342Z Current runner version: '2.336.0'
+2026-08-14T06:25:04.8017083Z ##[group]Runner Image Provisioner
+2026-08-14T06:25:04.8017899Z Hosted Compute Agent
+2026-08-14T06:25:04.8018416Z Version: 20260707.563
+2026-08-14T06:25:04.8019022Z Commit: 02667638d2b423fbc733a8e32a88b44996a3ba6e
+2026-08-14T06:25:04.8019711Z Build Date: 2026-07-07T19:33:50Z
+2026-08-14T06:25:04.8020326Z Worker ID: {b2008b68-6c29-487e-a887-dbf8b8c39a98}
+2026-08-14T06:25:04.8020995Z Azure Region: westus3
+2026-08-14T06:25:04.8021512Z ##[endgroup]
+2026-08-14T06:25:04.8022864Z ##[group]Operating System
+2026-08-14T06:25:04.8023412Z Ubuntu
+2026-08-14T06:25:04.8023862Z 24.04.4
+2026-08-14T06:25:04.8024401Z LTS
+2026-08-14T06:25:04.8024928Z ##[endgroup]
+2026-08-14T06:25:04.8025456Z ##[group]Runner Image
+2026-08-14T06:25:04.8026352Z Image: ubuntu-24.04
+2026-08-14T06:25:04.8026868Z Version: 20260720.247.2
+2026-08-14T06:25:04.8028055Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260720.247/images/ubuntu/Ubuntu2404-Readme.md
+2026-08-14T06:25:04.8029755Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260720.247
+2026-08-14T06:25:04.8030600Z ##[endgroup]
+2026-08-14T06:25:04.8031675Z ##[group]GITHUB_TOKEN Permissions
+2026-08-14T06:25:04.8033878Z Contents: read
+2026-08-14T06:25:04.8034417Z Metadata: read
+2026-08-14T06:25:04.8034981Z Packages: read
+2026-08-14T06:25:04.8035481Z ##[endgroup]
+2026-08-14T06:25:04.8037833Z Secret source: Actions
+2026-08-14T06:25:04.8038819Z Prepare workflow directory
+2026-08-14T06:25:04.8364042Z Prepare all required actions
+2026-08-14T06:25:04.8414996Z Getting action download info
+2026-08-14T06:25:05.1393460Z Download action repository 'actions/checkout@v3' (SHA:a37ce9120846195fa4ece8f58b268e6043cb2f26)
+2026-08-14T06:25:05.9014848Z Download action repository 'Azure/static-web-apps-deploy@v1' (SHA:1a947af9992250f3bc2e68ad0754c0b0c11566c9)
+2026-08-14T06:25:06.2515090Z Complete job name: Build and Deploy Job
+2026-08-14T06:25:06.3036132Z ##[group]Build container for action use: '/home/runner/work/_actions/Azure/static-web-apps-deploy/v1/Dockerfile'.
+2026-08-14T06:25:06.3081190Z ##[command]/usr/bin/docker build -t 0b367f:a7e5da0475264fcbb3736a75ec953a85 -f "/home/runner/work/_actions/Azure/static-web-apps-deploy/v1/Dockerfile" "/home/runner/work/_actions/Azure/static-web-apps-deploy/v1"
+2026-08-14T06:25:06.8262110Z #0 building with "default" instance using docker driver
+2026-08-14T06:25:06.8262993Z 
+2026-08-14T06:25:06.8263427Z #1 [internal] load build definition from Dockerfile
+2026-08-14T06:25:06.8264056Z #1 transferring dockerfile: 160B 0.0s done
+2026-08-14T06:25:06.8264574Z #1 DONE 0.0s
+2026-08-14T06:25:06.8264849Z 
+2026-08-14T06:25:06.8265214Z #2 [internal] load metadata for mcr.microsoft.com/appsvc/staticappsclient:stable
+2026-08-14T06:25:06.9680856Z #2 DONE 0.3s
+2026-08-14T06:25:07.0867579Z 
+2026-08-14T06:25:07.0868679Z #3 [internal] load .dockerignore
+2026-08-14T06:25:07.0869480Z #3 transferring context: 2B done
+2026-08-14T06:25:07.0871862Z #3 DONE 0.0s
+2026-08-14T06:25:07.0872282Z 
+2026-08-14T06:25:07.0872640Z #4 [internal] load build context
+2026-08-14T06:25:07.0873303Z #4 transferring context: 107B done
+2026-08-14T06:25:07.0873827Z #4 DONE 0.0s
+2026-08-14T06:25:07.0874096Z 
+2026-08-14T06:25:07.0874612Z #5 [1/2] FROM mcr.microsoft.com/appsvc/staticappsclient:stable@sha256:8ed8ea489d04d0636b5c47fbaa44f005975ab0d1f03eddc28014cdf7a061f7f4
+2026-08-14T06:25:07.0875981Z #5 resolve mcr.microsoft.com/appsvc/staticappsclient:stable@sha256:8ed8ea489d04d0636b5c47fbaa44f005975ab0d1f03eddc28014cdf7a061f7f4 done
+2026-08-14T06:25:07.0876989Z #5 sha256:8ed8ea489d04d0636b5c47fbaa44f005975ab0d1f03eddc28014cdf7a061f7f4 2.88kB / 2.88kB done
+2026-08-14T06:25:07.0877763Z #5 sha256:40dc2f594569ada869542e14b3d9b19af523e5a664b2099fa5deee0fac6bf3ab 0B / 62.25MB 0.1s
+2026-08-14T06:25:07.0878598Z #5 sha256:2dadab5848b144c9b973125a744d7db13f89b1ae3e08bc06af4115e3ebb6885b 14.85kB / 14.85kB done
+2026-08-14T06:25:07.0879447Z #5 sha256:673965f86294fda2f405de92b30753f90cbd1097f62d6ace60fd5bc27f7dff2a 0B / 16.97MB 0.1s
+2026-08-14T06:25:07.0880652Z #5 sha256:9a57ac12a02944f33f4613c51086e29027d2a9fe416981d3254c55b723712a5c 0B / 60.95MB 0.1s
+2026-08-14T06:25:07.2877386Z #5 sha256:40dc2f594569ada869542e14b3d9b19af523e5a664b2099fa5deee0fac6bf3ab 5.24MB / 62.25MB 0.3s
+2026-08-14T06:25:07.2878971Z #5 sha256:673965f86294fda2f405de92b30753f90cbd1097f62d6ace60fd5bc27f7dff2a 4.19MB / 16.97MB 0.3s
+2026-08-14T06:25:07.2880528Z #5 sha256:9a57ac12a02944f33f4613c51086e29027d2a9fe416981d3254c55b723712a5c 33.55MB / 60.95MB 0.3s
+2026-08-14T06:25:07.4243679Z #5 sha256:40dc2f594569ada869542e14b3d9b19af523e5a664b2099fa5deee0fac6bf3ab 25.17MB / 62.25MB 0.4s
+2026-08-14T06:25:07.4246962Z #5 sha256:673965f86294fda2f405de92b30753f90cbd1097f62d6ace60fd5bc27f7dff2a 16.97MB / 16.97MB 0.4s done
+2026-08-14T06:25:07.4248825Z #5 sha256:9a57ac12a02944f33f4613c51086e29027d2a9fe416981d3254c55b723712a5c 58.72MB / 60.95MB 0.4s
+2026-08-14T06:25:07.4250425Z #5 sha256:c7cdd48d6d211d1aca6edf8ae5ac69979ee52d0efbe788ad4073f5bda7763d5d 0B / 221.00MB 0.4s
+2026-08-14T06:25:07.4251582Z #5 extracting sha256:9a57ac12a02944f33f4613c51086e29027d2a9fe416981d3254c55b723712a5c
+2026-08-14T06:25:07.5281871Z #5 sha256:40dc2f594569ada869542e14b3d9b19af523e5a664b2099fa5deee0fac6bf3ab 56.62MB / 62.25MB 0.5s
+2026-08-14T06:25:07.5283507Z #5 sha256:9a57ac12a02944f33f4613c51086e29027d2a9fe416981d3254c55b723712a5c 60.95MB / 60.95MB 0.4s done
+2026-08-14T06:25:07.5285223Z #5 sha256:c7cdd48d6d211d1aca6edf8ae5ac69979ee52d0efbe788ad4073f5bda7763d5d 11.53MB / 221.00MB 0.5s
+2026-08-14T06:25:07.5287401Z #5 sha256:3b17442d31d185afee5af808ff7f34be99df67a06c11ef3819e3612d90105eba 0B / 36.64MB 0.5s
+2026-08-14T06:25:07.5288915Z #5 sha256:89732bc7504122601f40269fc9ddfb70982e633ea9caf641ae45736f2846b004 39B / 39B 0.5s done
+2026-08-14T06:25:07.6444100Z #5 sha256:40dc2f594569ada869542e14b3d9b19af523e5a664b2099fa5deee0fac6bf3ab 62.25MB / 62.25MB 0.5s done
+2026-08-14T06:25:07.6449198Z #5 sha256:c7cdd48d6d211d1aca6edf8ae5ac69979ee52d0efbe788ad4073f5bda7763d5d 39.85MB / 221.00MB 0.6s
+2026-08-14T06:25:07.6452681Z #5 sha256:3b17442d31d185afee5af808ff7f34be99df67a06c11ef3819e3612d90105eba 13.63MB / 36.64MB 0.6s
+2026-08-14T06:25:07.6454469Z #5 sha256:2151d16d7dcca2946d0178aa0cd40138de91ad550daa6c0ce23cc8680cef44dc 0B / 1.83MB 0.6s
+2026-08-14T06:25:07.7503722Z #5 sha256:c7cdd48d6d211d1aca6edf8ae5ac69979ee52d0efbe788ad4073f5bda7763d5d 67.11MB / 221.00MB 0.7s
+2026-08-14T06:25:07.7507990Z #5 sha256:2151d16d7dcca2946d0178aa0cd40138de91ad550daa6c0ce23cc8680cef44dc 1.83MB / 1.83MB 0.6s done
+2026-08-14T06:25:07.7510221Z #5 sha256:5580a4bf363d0ef29fbd6a90ba5891fac7d0a8cddd81435531b222462b9446cf 6.29MB / 79.23MB 0.7s
+2026-08-14T06:25:07.8569414Z #5 sha256:c7cdd48d6d211d1aca6edf8ae5ac69979ee52d0efbe788ad4073f5bda7763d5d 94.37MB / 221.00MB 0.8s
+2026-08-14T06:25:07.8571625Z #5 sha256:3b17442d31d185afee5af808ff7f34be99df67a06c11ef3819e3612d90105eba 36.64MB / 36.64MB 0.7s done
+2026-08-14T06:25:07.8573600Z #5 sha256:5580a4bf363d0ef29fbd6a90ba5891fac7d0a8cddd81435531b222462b9446cf 33.55MB / 79.23MB 0.8s
+2026-08-14T06:25:07.8575485Z #5 sha256:3175e53e95b1cb83067cc50762c4ffd867c26a65786c1c543a424020be5e04fa 123.28kB / 123.28kB 0.8s done
+2026-08-14T06:25:07.8579659Z #5 sha256:b63b9d8b66b5ff5212c0d72d09c4d3feadccf1db4ef01d419da27de677a7e768 0B / 1.31MB 0.8s
+2026-08-14T06:25:07.9694096Z #5 sha256:c7cdd48d6d211d1aca6edf8ae5ac69979ee52d0efbe788ad4073f5bda7763d5d 122.68MB / 221.00MB 0.9s
+2026-08-14T06:25:07.9696828Z #5 sha256:5580a4bf363d0ef29fbd6a90ba5891fac7d0a8cddd81435531b222462b9446cf 59.77MB / 79.23MB 0.9s
+2026-08-14T06:25:07.9698581Z #5 sha256:b63b9d8b66b5ff5212c0d72d09c4d3feadccf1db4ef01d419da27de677a7e768 1.31MB / 1.31MB 0.8s done
+2026-08-14T06:25:07.9700386Z #5 sha256:28fac68ae10cfabc2b6e0950099b1f82f89d163713e7add747a7881f65df2107 0B / 733.27kB 0.9s
+2026-08-14T06:25:08.0727638Z #5 sha256:c7cdd48d6d211d1aca6edf8ae5ac69979ee52d0efbe788ad4073f5bda7763d5d 149.95MB / 221.00MB 1.0s
+2026-08-14T06:25:08.0732497Z #5 sha256:5580a4bf363d0ef29fbd6a90ba5891fac7d0a8cddd81435531b222462b9446cf 79.23MB / 79.23MB 1.0s done
+2026-08-14T06:25:08.0737151Z #5 sha256:28fac68ae10cfabc2b6e0950099b1f82f89d163713e7add747a7881f65df2107 733.27kB / 733.27kB 0.9s done
+2026-08-14T06:25:08.0739511Z #5 sha256:54839ea777508dd630548e945f939d611fc491006c088552eb814f5245274d23 7.34MB / 40.28MB 1.0s
+2026-08-14T06:25:08.0741102Z #5 sha256:093d222846cbb3af8c495e5edc11036cc3764df86b2ea13eba45d8d633027fb8 0B / 176B 1.0s
+2026-08-14T06:25:08.1792792Z #5 sha256:c7cdd48d6d211d1aca6edf8ae5ac69979ee52d0efbe788ad4073f5bda7763d5d 177.21MB / 221.00MB 1.1s
+2026-08-14T06:25:08.1801242Z #5 sha256:54839ea777508dd630548e945f939d611fc491006c088552eb814f5245274d23 34.60MB / 40.28MB 1.1s
+2026-08-14T06:25:08.1802238Z #5 sha256:093d222846cbb3af8c495e5edc11036cc3764df86b2ea13eba45d8d633027fb8 176B / 176B 1.1s done
+2026-08-14T06:25:08.1803111Z #5 sha256:e5b98d580c88cbc9c3209953cda9374569e5eb75690b57485ec7b2265f5c9604 0B / 176B 1.1s
+2026-08-14T06:25:08.2859599Z #5 sha256:c7cdd48d6d211d1aca6edf8ae5ac69979ee52d0efbe788ad4073f5bda7763d5d 221.00MB / 221.00MB 1.3s
+2026-08-14T06:25:08.2861315Z #5 sha256:54839ea777508dd630548e945f939d611fc491006c088552eb814f5245274d23 40.28MB / 40.28MB 1.1s done
+2026-08-14T06:25:08.2867297Z #5 sha256:e5b98d580c88cbc9c3209953cda9374569e5eb75690b57485ec7b2265f5c9604 176B / 176B 1.1s done
+2026-08-14T06:25:08.2869109Z #5 sha256:7364f3ef58a1fcc634a004f1a3f535e1da1400f1ffd64ac989c3d51117422f5e 30.41MB / 71.24MB 1.3s
+2026-08-14T06:25:08.4034556Z #5 sha256:7364f3ef58a1fcc634a004f1a3f535e1da1400f1ffd64ac989c3d51117422f5e 58.72MB / 71.24MB 1.4s
+2026-08-14T06:25:08.5102579Z #5 sha256:7364f3ef58a1fcc634a004f1a3f535e1da1400f1ffd64ac989c3d51117422f5e 71.24MB / 71.24MB 1.5s
+2026-08-14T06:25:08.7792642Z #5 sha256:c7cdd48d6d211d1aca6edf8ae5ac69979ee52d0efbe788ad4073f5bda7763d5d 221.00MB / 221.00MB 1.7s done
+2026-08-14T06:25:08.7794300Z #5 sha256:7364f3ef58a1fcc634a004f1a3f535e1da1400f1ffd64ac989c3d51117422f5e 71.24MB / 71.24MB 1.7s done
+2026-08-14T06:25:09.5470157Z #5 extracting sha256:9a57ac12a02944f33f4613c51086e29027d2a9fe416981d3254c55b723712a5c 2.0s done
+2026-08-14T06:25:09.5471460Z #5 extracting sha256:673965f86294fda2f405de92b30753f90cbd1097f62d6ace60fd5bc27f7dff2a 0.1s
+2026-08-14T06:25:09.8909499Z #5 extracting sha256:673965f86294fda2f405de92b30753f90cbd1097f62d6ace60fd5bc27f7dff2a 0.3s done
+2026-08-14T06:25:09.9801780Z #5 extracting sha256:40dc2f594569ada869542e14b3d9b19af523e5a664b2099fa5deee0fac6bf3ab
+2026-08-14T06:25:11.5416566Z #5 extracting sha256:40dc2f594569ada869542e14b3d9b19af523e5a664b2099fa5deee0fac6bf3ab 1.6s done
+2026-08-14T06:25:11.7637781Z #5 extracting sha256:c7cdd48d6d211d1aca6edf8ae5ac69979ee52d0efbe788ad4073f5bda7763d5d
+2026-08-14T06:25:16.0079451Z #5 extracting sha256:c7cdd48d6d211d1aca6edf8ae5ac69979ee52d0efbe788ad4073f5bda7763d5d 4.1s done
+2026-08-14T06:25:16.9750738Z #5 extracting sha256:89732bc7504122601f40269fc9ddfb70982e633ea9caf641ae45736f2846b004
+2026-08-14T06:25:17.1279154Z #5 extracting sha256:89732bc7504122601f40269fc9ddfb70982e633ea9caf641ae45736f2846b004 done
+2026-08-14T06:25:17.1281060Z #5 extracting sha256:3b17442d31d185afee5af808ff7f34be99df67a06c11ef3819e3612d90105eba 0.1s
+2026-08-14T06:25:17.9007501Z #5 extracting sha256:3b17442d31d185afee5af808ff7f34be99df67a06c11ef3819e3612d90105eba 0.8s done
+2026-08-14T06:25:17.9010279Z #5 extracting sha256:2151d16d7dcca2946d0178aa0cd40138de91ad550daa6c0ce23cc8680cef44dc
+2026-08-14T06:25:18.0126477Z #5 extracting sha256:2151d16d7dcca2946d0178aa0cd40138de91ad550daa6c0ce23cc8680cef44dc 0.1s done
+2026-08-14T06:25:18.0127366Z #5 extracting sha256:5580a4bf363d0ef29fbd6a90ba5891fac7d0a8cddd81435531b222462b9446cf
+2026-08-14T06:25:19.0184712Z #5 extracting sha256:5580a4bf363d0ef29fbd6a90ba5891fac7d0a8cddd81435531b222462b9446cf 0.9s done
+2026-08-14T06:25:19.0186377Z #5 extracting sha256:3175e53e95b1cb83067cc50762c4ffd867c26a65786c1c543a424020be5e04fa
+2026-08-14T06:25:19.1279271Z #5 extracting sha256:3175e53e95b1cb83067cc50762c4ffd867c26a65786c1c543a424020be5e04fa done
+2026-08-14T06:25:19.1280165Z #5 extracting sha256:b63b9d8b66b5ff5212c0d72d09c4d3feadccf1db4ef01d419da27de677a7e768 0.0s done
+2026-08-14T06:25:19.1282632Z #5 extracting sha256:28fac68ae10cfabc2b6e0950099b1f82f89d163713e7add747a7881f65df2107 0.0s done
+2026-08-14T06:25:19.1283728Z #5 extracting sha256:54839ea777508dd630548e945f939d611fc491006c088552eb814f5245274d23
+2026-08-14T06:25:19.7069651Z #5 extracting sha256:54839ea777508dd630548e945f939d611fc491006c088552eb814f5245274d23 0.4s done
+2026-08-14T06:25:19.7071896Z #5 extracting sha256:093d222846cbb3af8c495e5edc11036cc3764df86b2ea13eba45d8d633027fb8 done
+2026-08-14T06:25:19.7073093Z #5 extracting sha256:e5b98d580c88cbc9c3209953cda9374569e5eb75690b57485ec7b2265f5c9604 done
+2026-08-14T06:25:19.7074097Z #5 extracting sha256:7364f3ef58a1fcc634a004f1a3f535e1da1400f1ffd64ac989c3d51117422f5e 0.1s
+2026-08-14T06:25:21.8997143Z #5 extracting sha256:7364f3ef58a1fcc634a004f1a3f535e1da1400f1ffd64ac989c3d51117422f5e 2.1s done
+2026-08-14T06:25:22.0513714Z #5 DONE 15.1s
+2026-08-14T06:25:22.2236950Z 
+2026-08-14T06:25:22.2256764Z #6 [2/2] COPY entrypoint.sh /entrypoint.sh
+2026-08-14T06:25:22.2257383Z #6 DONE 0.0s
+2026-08-14T06:25:22.2257890Z 
+2026-08-14T06:25:22.2258067Z #7 exporting to image
+2026-08-14T06:25:22.2258553Z #7 exporting layers
+2026-08-14T06:25:23.0042090Z #7 exporting layers 0.9s done
+2026-08-14T06:25:23.0208931Z #7 writing image sha256:f2d28cd0f6899225932ac16fcbfc137a54e1c1e23958a107ce9336a571c88862 done
+2026-08-14T06:25:23.0210128Z #7 naming to docker.io/library/0b367f:a7e5da0475264fcbb3736a75ec953a85 done
+2026-08-14T06:25:23.0210798Z #7 DONE 0.9s
+2026-08-14T06:25:23.0245777Z ##[endgroup]
+2026-08-14T06:25:23.0656727Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-08-14T06:25:23.0664925Z ##[group]Run actions/checkout@v3
+2026-08-14T06:25:23.0665350Z with:
+2026-08-14T06:25:23.0665695Z   submodules: true
+2026-08-14T06:25:23.0665925Z   lfs: false
+2026-08-14T06:25:23.0666174Z   repository: kxj2026/kxj-site
+2026-08-14T06:25:23.0669394Z   token: ***
+2026-08-14T06:25:23.0669599Z   ssh-strict: true
+2026-08-14T06:25:23.0669814Z   persist-credentials: true
+2026-08-14T06:25:23.0670051Z   clean: true
+2026-08-14T06:25:23.0670262Z   sparse-checkout-cone-mode: true
+2026-08-14T06:25:23.0670523Z   fetch-depth: 1
+2026-08-14T06:25:23.0670720Z   fetch-tags: false
+2026-08-14T06:25:23.0670926Z   set-safe-directory: true
+2026-08-14T06:25:23.0671220Z   allow-unsafe-pr-checkout: false
+2026-08-14T06:25:23.0671646Z ##[endgroup]
+2026-08-14T06:25:23.1450991Z (node:2338) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-08-14T06:25:23.1451672Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-08-14T06:25:23.1588700Z Syncing repository: kxj2026/kxj-site
+2026-08-14T06:25:23.1590707Z ##[group]Getting Git version info
+2026-08-14T06:25:23.1591298Z Working directory is '/home/runner/work/kxj-site/kxj-site'
+2026-08-14T06:25:23.1592304Z [command]/usr/bin/git version
+2026-08-14T06:25:23.1592677Z git version 2.54.0
+2026-08-14T06:25:23.1593979Z ##[endgroup]
+2026-08-14T06:25:23.1603026Z Temporarily overriding HOME='/home/runner/work/_temp/b3e0b4ba-9b11-4d6f-89ac-df8b74dc421f' before making global git config changes
+2026-08-14T06:25:23.1603925Z Adding repository directory to the temporary git global config as a safe directory
+2026-08-14T06:25:23.1604539Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/kxj-site/kxj-site
+2026-08-14T06:25:23.1645848Z Deleting the contents of '/home/runner/work/kxj-site/kxj-site'
+2026-08-14T06:25:23.1649779Z ##[group]Initializing the repository
+2026-08-14T06:25:23.1653505Z [command]/usr/bin/git init /home/runner/work/kxj-site/kxj-site
+2026-08-14T06:25:23.1735872Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-08-14T06:25:23.1736541Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-08-14T06:25:23.1737327Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-08-14T06:25:23.1737743Z hint: call:
+2026-08-14T06:25:23.1737948Z hint:
+2026-08-14T06:25:23.1738274Z hint: 	git config --global init.defaultBranch <name>
+2026-08-14T06:25:23.1738675Z hint:
+2026-08-14T06:25:23.1739207Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-08-14T06:25:23.1740117Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-08-14T06:25:23.1740804Z hint:
+2026-08-14T06:25:23.1741231Z hint: 	git branch -m <name>
+2026-08-14T06:25:23.1741956Z hint:
+2026-08-14T06:25:23.1742813Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-08-14T06:25:23.1743837Z Initialized empty Git repository in /home/runner/work/kxj-site/kxj-site/.git/
+2026-08-14T06:25:23.1749145Z [command]/usr/bin/git remote add origin https://github.com/kxj2026/kxj-site
+2026-08-14T06:25:23.1784292Z ##[endgroup]
+2026-08-14T06:25:23.1784694Z ##[group]Disabling automatic garbage collection
+2026-08-14T06:25:23.1789276Z [command]/usr/bin/git config --local gc.auto 0
+2026-08-14T06:25:23.1812226Z ##[endgroup]
+2026-08-14T06:25:23.1812807Z ##[group]Setting up auth
+2026-08-14T06:25:23.1818919Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-08-14T06:25:23.1846755Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-08-14T06:25:23.2133969Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-08-14T06:25:23.2159771Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-08-14T06:25:23.2337263Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-08-14T06:25:23.2367405Z ##[endgroup]
+2026-08-14T06:25:23.2367850Z ##[group]Fetching the repository
+2026-08-14T06:25:23.2374873Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +3076a77d1ac46210de1c042fc166510ebbcdefac:refs/remotes/origin/main
+2026-08-14T06:25:23.7857354Z remote: Enumerating objects: 8, done.        
+2026-08-14T06:25:23.7858311Z remote: Counting objects:  12% (1/8)        
+2026-08-14T06:25:23.7859345Z remote: Counting objects:  25% (2/8)        
+2026-08-14T06:25:23.7859863Z remote: Counting objects:  37% (3/8)        
+2026-08-14T06:25:23.7860323Z remote: Counting objects:  50% (4/8)        
+2026-08-14T06:25:23.7860782Z remote: Counting objects:  62% (5/8)        
+2026-08-14T06:25:23.7861261Z remote: Counting objects:  75% (6/8)        
+2026-08-14T06:25:23.7861727Z remote: Counting objects:  87% (7/8)        
+2026-08-14T06:25:23.7862209Z remote: Counting objects: 100% (8/8)        
+2026-08-14T06:25:23.7862742Z remote: Counting objects: 100% (8/8), done.        
+2026-08-14T06:25:23.7863291Z remote: Compressing objects:  14% (1/7)        
+2026-08-14T06:25:23.7863829Z remote: Compressing objects:  28% (2/7)        
+2026-08-14T06:25:23.7864346Z remote: Compressing objects:  42% (3/7)        
+2026-08-14T06:25:23.7864876Z remote: Compressing objects:  57% (4/7)        
+2026-08-14T06:25:23.7865404Z remote: Compressing objects:  71% (5/7)        
+2026-08-14T06:25:23.7866199Z remote: Compressing objects:  85% (6/7)        
+2026-08-14T06:25:23.7866724Z remote: Compressing objects: 100% (7/7)        
+2026-08-14T06:25:23.7867288Z remote: Compressing objects: 100% (7/7), done.        
+2026-08-14T06:25:23.8342503Z remote: Total 8 (delta 0), reused 8 (delta 0), pack-reused 0 (from 0)        
+2026-08-14T06:25:23.8415448Z From https://github.com/kxj2026/kxj-site
+2026-08-14T06:25:23.8417144Z  * [new ref]         3076a77d1ac46210de1c042fc166510ebbcdefac -> origin/main
+2026-08-14T06:25:23.8463882Z ##[endgroup]
+2026-08-14T06:25:23.8464646Z ##[group]Determining the checkout info
+2026-08-14T06:25:23.8466992Z ##[endgroup]
+2026-08-14T06:25:23.8467551Z ##[group]Checking out the ref
+2026-08-14T06:25:23.8472684Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-08-14T06:25:23.8515907Z Switched to a new branch 'main'
+2026-08-14T06:25:23.8516686Z branch 'main' set up to track 'origin/main'.
+2026-08-14T06:25:23.8522699Z ##[endgroup]
+2026-08-14T06:25:23.8523348Z ##[group]Setting up auth for fetching submodules
+2026-08-14T06:25:23.8529816Z [command]/usr/bin/git config --global http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-08-14T06:25:23.8564003Z [command]/usr/bin/git config --global --unset-all url.https://github.com/.insteadOf
+2026-08-14T06:25:23.8588280Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf git@github.com:
+2026-08-14T06:25:23.8611689Z [command]/usr/bin/git config --global --add url.https://github.com/.insteadOf org-315617898@github.com:
+2026-08-14T06:25:23.8641671Z ##[endgroup]
+2026-08-14T06:25:23.8642171Z ##[group]Fetching submodules
+2026-08-14T06:25:23.8646243Z [command]/usr/bin/git submodule sync
+2026-08-14T06:25:23.8834674Z [command]/usr/bin/git -c protocol.version=2 submodule update --init --force --depth=1
+2026-08-14T06:25:23.9025180Z [command]/usr/bin/git submodule foreach git config --local gc.auto 0
+2026-08-14T06:25:23.9207826Z ##[endgroup]
+2026-08-14T06:25:23.9208915Z ##[group]Persisting credentials for submodules
+2026-08-14T06:25:23.9213877Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'url\.https\:\/\/github\.com\/\.insteadOf' && git config --local --unset-all 'url.https://github.com/.insteadOf' || :"
+2026-08-14T06:25:23.9403256Z [command]/usr/bin/git submodule foreach sh -c "git config --local 'http.https://github.com/.extraheader' 'AUTHORIZATION: basic ***' && git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-08-14T06:25:23.9589410Z [command]/usr/bin/git submodule foreach git config --local --add 'url.https://github.com/.insteadOf' 'git@github.com:'
+2026-08-14T06:25:23.9777096Z [command]/usr/bin/git submodule foreach git config --local --add 'url.https://github.com/.insteadOf' 'org-315617898@github.com:'
+2026-08-14T06:25:23.9961280Z ##[endgroup]
+2026-08-14T06:25:23.9994323Z [command]/usr/bin/git log -1 --format='%H'
+2026-08-14T06:25:24.0013038Z '3076a77d1ac46210de1c042fc166510ebbcdefac'
+2026-08-14T06:25:24.0186877Z ##[group]Run Azure/static-web-apps-deploy@v1
+2026-08-14T06:25:24.0187174Z with:
+2026-08-14T06:25:24.0187899Z   azure_static_web_apps_api_token: ***
+2026-08-14T06:25:24.0190536Z   repo_token: ***
+2026-08-14T06:25:24.0190732Z   action: upload
+2026-08-14T06:25:24.0190934Z   app_location: /
+2026-08-14T06:25:24.0191125Z ##[endgroup]
+2026-08-14T06:25:24.0292423Z ##[command]/usr/bin/docker run --name b367fa7e5da0475264fcbb3736a75ec953a85_bc1a38 --label 0b367f --workdir /github/workspace --rm -e "INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN" -e "INPUT_REPO_TOKEN" -e "INPUT_ACTION" -e "INPUT_APP_LOCATION" -e "INPUT_API_LOCATION" -e "INPUT_OUTPUT_LOCATION" -e "INPUT_API_BUILD_COMMAND" -e "INPUT_APP_ARTIFACT_LOCATION" -e "INPUT_APP_BUILD_COMMAND" -e "INPUT_ROUTES_LOCATION" -e "INPUT_SKIP_APP_BUILD" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "GITHUB_ARTIFACTS" -e "GITHUB_ARTIFACTS_LIST" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e "ACTIONS_ORCHESTRATION_ID" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp":"/github/runner_temp" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/kxj-site/kxj-site":"/github/workspace" 0b367f:a7e5da0475264fcbb3736a75ec953a85
+2026-08-14T06:25:24.2435981Z DeploymentId: 05ae6ca7-de8a-4759-b42c-e153f360a861
+2026-08-14T06:25:24.2436421Z 
+2026-08-14T06:25:24.3458096Z [37mTry to validate location at: '/github/workspace'.[0m
+2026-08-14T06:25:24.3465283Z [37mApp Directory Location: '/' was found.[0m
+2026-08-14T06:25:24.3466196Z [37mTry to validate location at: '/github/workspace/swa-db-connections'.[0m
+2026-08-14T06:25:24.3469146Z [37mLooking for event info[0m
+2026-08-14T06:25:45.0448310Z [31mThe content server has rejected the request with: BadRequest[0m
+2026-08-14T06:25:45.0449625Z [31mReason: No matching Static Web App was found or the api key was invalid.[0m
+2026-08-14T06:25:45.1015718Z [37m[0m
+2026-08-14T06:25:45.1017405Z [33mFor further information, please visit the Azure Static Web Apps documentation at https://docs.microsoft.com/en-us/azure/static-web-apps/[0m
+2026-08-14T06:25:45.1019578Z [33mIf you believe this behavior is unexpected, please raise a GitHub issue at https://github.com/azure/static-web-apps/issues/[0m
+2026-08-14T06:25:45.1020311Z [33mExiting[0m
+2026-08-14T06:25:45.1858806Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-08-14T06:25:45.1860364Z Post job cleanup.
+2026-08-14T06:25:45.2522378Z (node:2733) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-08-14T06:25:45.2523043Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-08-14T06:25:45.2550364Z [command]/usr/bin/git version
+2026-08-14T06:25:45.2582705Z git version 2.54.0
+2026-08-14T06:25:45.2616462Z Temporarily overriding HOME='/home/runner/work/_temp/d7754877-1ff0-4f15-a37f-23ab269625b2' before making global git config changes
+2026-08-14T06:25:45.2627242Z Adding repository directory to the temporary git global config as a safe directory
+2026-08-14T06:25:45.2628069Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/kxj-site/kxj-site
+2026-08-14T06:25:45.2651958Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-08-14T06:25:45.2680582Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-08-14T06:25:45.2856090Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-08-14T06:25:45.2877629Z http.https://github.com/.extraheader
+2026-08-14T06:25:45.2886707Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-08-14T06:25:45.2911478Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-08-14T06:25:45.3203664Z Cleaning up orphan processes
+2026-08-14T06:25:45.3470718Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v3. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
