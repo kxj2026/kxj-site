@@ -1,0 +1,24 @@
+# 依赖 / 构建产物（本项目为纯静态站，无构建步骤，以下内容多为占位防护）
+node_modules/
+dist/
+build/
+.cache/
+*.log
+
+# 本地临时 / 敏感文件
+*.zip
+.auth.txt
+.env
+.env.*
+!.env.example
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# 不应提交的 Azure 令牌等
+**/secrets/
+**/*token*
