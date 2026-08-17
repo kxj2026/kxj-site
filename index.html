@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>北京科学嘉教育科技发展有限公司</title>
+  <title>FANG INVESTMENT · 方投资</title>
+  <meta name="description" content="FANG INVESTMENT (方投资) — a multi-generation family investment office connecting global capital with discipline and trust. Patient capital, global horizon.">
+
+  <!-- Favicon: 方 -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230f1d3a'/%3E%3Ctext x='32' y='46' font-size='44' text-anchor='middle' fill='%23b08947' font-family='serif'%3E%E6%96%B9%3C/text%3E%3C/svg%3E">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -204,7 +208,17 @@
       padding-left: 12px;
     }
 
-   
+    /* ---- 顶部自动播放进度条（已修复：基础样式 + 过渡） ---- */
+    .progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      z-index: 6;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transition: width 5s linear;
+    }
     .progress.run { width: 100%; }
 
     @media (prefers-reduced-motion: reduce) {
@@ -220,7 +234,8 @@
        ============================================================ -->
   <div class="carousel" id="carousel">
     <div class="brand-mark">
-     
+      <span class="mark">FANG</span>
+      <span class="tag">Investment · 方投资</span>
     </div>
 
     <div class="progress" id="progress"></div>
@@ -228,11 +243,17 @@
     <div class="slides" id="slides">
       <div class="slide active" style="background-image:url('assets/slide-fang-hero.jpg')">
         <div class="slide-caption">
+          <span class="label">Generations of Vision</span>
+          <h2>Built for tomorrow.</h2>
+          <p>Patient capital and a global horizon — a multi-generation family investment office compounding value across decades.</p>
         </div>
       </div>
 
       <div class="slide" style="background-image:url('assets/slide-yingtanghong.jpg')">
         <div class="slide-caption">
+          <span class="label">Founded in 1990</span>
+          <h2>Connecting markets. Creating value.</h2>
+          <p>Ying Tang Hong Investment — bridging Hong Kong, London and the world's capital markets with discipline and trust.</p>
         </div>
       </div>
     </div>
