@@ -25,7 +25,8 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 100vh;
+      height: 100vh;       /* fallback for old browsers */
+      height: 100dvh;      /* dynamic viewport height: fixes mobile address-bar overlap */
       overflow: hidden;
     }
 
@@ -35,6 +36,21 @@
       background-image: url('assets/slide-fang-hero.jpg');
       background-size: cover;
       background-position: center;
+    }
+
+    /* Portrait phones/tablets: keep the focal point (方) instead of cropping it out */
+    @media (orientation: portrait) {
+      .hero-bg { background-position: center 38%; }
+    }
+
+    /* Ultrawide / 4K monitors: nudge the horizon so it stays pleasant */
+    @media (min-aspect-ratio: 21/9) {
+      .hero-bg { background-position: center 45%; }
+    }
+
+    /* Short landscape (phones turned sideways): avoid over-cropping top/bottom */
+    @media (max-height: 480px) {
+      .hero-bg { background-position: center 40%; }
     }
     .hero-bg::after {
       content: '';
