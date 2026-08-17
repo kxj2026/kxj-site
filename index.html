@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FANG INVESTMENT · 方投资</title>
-  <meta name="description" content="FANG INVESTMENT (方投资) — a multi-generation family investment office connecting global capital with discipline and trust. Patient capital, global horizon.">
+  <meta name="description" content="FANG INVESTMENT (方投资) — a multi-generation family investment office connecting global capital with discipline and trust.">
 
   <!-- Favicon: 方 -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230f1d3a'/%3E%3Ctext x='32' y='46' font-size='44' text-anchor='middle' fill='%23b08947' font-family='serif'%3E%E6%96%B9%3C/text%3E%3C/svg%3E">
@@ -25,7 +25,6 @@
       --display: 'Cinzel', 'Cormorant Garamond', serif;
       --serif: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif;
       --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-      --ease: cubic-bezier(.4, 0, .2, 1);
     }
 
     html, body { height: 100%; }
@@ -37,38 +36,23 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* ============================================================
-       CAROUSEL (轮播图 — 唯一保留的内容)
-       ============================================================ */
-    .carousel {
+    /* 单张全屏图（原轮播图第一张，去掉滚动/切换） */
+    .hero {
       position: relative;
       width: 100%;
       height: 100vh;
       overflow: hidden;
-      background: var(--navy-deep);
     }
 
-    .slides { position: absolute; inset: 0; }
-
-    .slide {
+    .hero-bg {
       position: absolute;
       inset: 0;
+      background-image: url('assets/slide-fang-hero.jpg');
       background-size: cover;
       background-position: center;
-      opacity: 0;
-      transform: scale(1.06);
-      transition: opacity 1.1s var(--ease), transform 6s linear;
-      display: flex;
-      align-items: flex-end;
     }
-    .slide.active {
-      opacity: 1;
-      transform: scale(1);
-      z-index: 1;
-    }
-
     /* 暗化遮罩，确保文字可读 */
-    .slide::after {
+    .hero-bg::after {
       content: '';
       position: absolute;
       inset: 0;
@@ -78,11 +62,12 @@
     }
 
     .slide-caption {
-      position: relative;
+      position: absolute;
       z-index: 2;
       color: #fff;
       max-width: 880px;
-      padding: 0 7vw 11vh;
+      left: 7vw;
+      bottom: 11vh;
     }
     .slide-caption .label {
       font-family: var(--sans);
@@ -120,70 +105,7 @@
       color: rgba(255,255,255,.86);
     }
 
-    /* ---- 控制按钮 ---- */
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 5;
-      width: 56px;
-      height: 56px;
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 50%;
-      color: #fff;
-      font-size: 22px;
-      line-height: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(8,21,42,.18);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      transition: background .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
-      cursor: pointer;
-    }
-    .carousel-btn:hover {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--navy-deep);
-    }
-    .carousel-btn.prev { left: 3vw; }
-    .carousel-btn.next { right: 3vw; }
-    .carousel-btn:active { transform: translateY(-50%) scale(.92); }
-    @media (max-width: 720px) {
-      .carousel-btn { width: 44px; height: 44px; font-size: 18px; }
-      .carousel-btn.prev { left: 4vw; }
-      .carousel-btn.next { right: 4vw; }
-    }
-
-    /* ---- 圆点导航 ---- */
-    .dots {
-      position: absolute;
-      bottom: 4.5vh;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 5;
-      display: flex;
-      gap: 14px;
-    }
-    .dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,.6);
-      background: transparent;
-      cursor: pointer;
-      padding: 0;
-      transition: background .3s var(--ease), transform .3s var(--ease), border-color .3s var(--ease);
-    }
-    .dot.active {
-      background: var(--gold-light);
-      border-color: var(--gold-light);
-      transform: scale(1.25);
-    }
-    .dot:hover { border-color: #fff; }
-
-    /* ---- 顶部品牌（轮播图内的轻量标识，非独立模块） ---- */
+    /* 顶部品牌 */
     .brand-mark {
       position: absolute;
       top: 4vh;
@@ -207,123 +129,22 @@
       border-left: 1px solid rgba(255,255,255,.3);
       padding-left: 12px;
     }
-
-    /* ---- 顶部自动播放进度条（已修复：基础样式 + 过渡） ---- */
-    .progress {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 3px;
-      width: 0;
-      z-index: 6;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-      transition: width 5s linear;
-    }
-    .progress.run { width: 100%; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .slide { transition: opacity .4s ease; transform: none !important; }
-      .progress { display: none; }
-    }
   </style>
 </head>
 <body>
-
-  <!-- ============================================================
-       轮播图 (CAROUSEL)
-       ============================================================ -->
-  <div class="carousel" id="carousel">
+  <div class="hero">
     <div class="brand-mark">
       <span class="mark">FANG</span>
       <span class="tag">Investment · 方投资</span>
     </div>
 
-    <div class="progress" id="progress"></div>
+    <div class="hero-bg"></div>
 
-    <div class="slides" id="slides">
-      <div class="slide active" style="background-image:url('assets/slide-fang-hero.jpg')">
-        <div class="slide-caption">
-          <span class="label">Generations of Vision</span>
-          <h2>Built for tomorrow.</h2>
-          <p>Patient capital and a global horizon — a multi-generation family investment office compounding value across decades.</p>
-        </div>
-      </div>
-
-      <div class="slide" style="background-image:url('assets/slide-yingtanghong.jpg')">
-        <div class="slide-caption">
-          <span class="label">Founded in 1990</span>
-          <h2>Connecting markets. Creating value.</h2>
-          <p>Ying Tang Hong Investment — bridging Hong Kong, London and the world's capital markets with discipline and trust.</p>
-        </div>
-      </div>
+    <div class="slide-caption">
+      <span class="label">Generations of Vision</span>
+      <h2>Built for tomorrow.</h2>
+      <p>Patient capital and a global horizon — a multi-generation family investment office compounding value across decades.</p>
     </div>
-
-    <button class="carousel-btn prev" id="prev" aria-label="Previous slide">&#8249;</button>
-    <button class="carousel-btn next" id="next" aria-label="Next slide">&#8250;</button>
-
-    <div class="dots" id="dots"></div>
   </div>
-
-  <script>
-    const slides = Array.from(document.querySelectorAll('.slide'));
-    const dotsWrap = document.getElementById('dots');
-    const progress = document.getElementById('progress');
-    const INTERVAL = 5000;
-    let current = 0;
-    let timer = null;
-
-    // 生成圆点
-    slides.forEach((_, i) => {
-      const b = document.createElement('button');
-      b.className = 'dot' + (i === 0 ? ' active' : '');
-      b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-      b.addEventListener('click', () => goTo(i));
-      dotsWrap.appendChild(b);
-    });
-    const dots = Array.from(dotsWrap.children);
-
-    function goTo(index) {
-      current = (index + slides.length) % slides.length;
-      slides.forEach((s, i) => s.classList.toggle('active', i === current));
-      dots.forEach((d, i) => d.classList.toggle('active', i === current));
-      restartTimer();
-    }
-
-    function next() { goTo(current + 1); }
-    function prev() { goTo(current - 1); }
-
-    function restartTimer() {
-      clearInterval(timer);
-      progress.classList.remove('run');
-      // 强制重排以重启动画
-      void progress.offsetWidth;
-      progress.classList.add('run');
-      timer = setInterval(next, INTERVAL);
-    }
-
-    document.getElementById('next').addEventListener('click', next);
-    document.getElementById('prev').addEventListener('click', prev);
-
-    // 悬停暂停
-    const carousel = document.getElementById('carousel');
-    carousel.addEventListener('mouseenter', () => { clearInterval(timer); progress.classList.remove('run'); });
-    carousel.addEventListener('mouseleave', restartTimer);
-
-    // 键盘左右切换
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') next();
-      if (e.key === 'ArrowLeft') prev();
-    });
-
-    // 触摸滑动
-    let startX = 0;
-    carousel.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-    carousel.addEventListener('touchend', e => {
-      const dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 50) (dx < 0 ? next() : prev());
-    }, { passive: true });
-
-    restartTimer();
-  </script>
 </body>
 </html>
