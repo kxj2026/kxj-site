@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FANG INVESTMENT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>FANG INVESTMENT · 方投资</title>
   <meta name="description" content="FANG INVESTMENT (方投资) — a multi-generation family investment office connecting global capital with discipline and trust.">
 
   <!-- Favicon: 方 -->
@@ -14,6 +14,7 @@
 
     :root {
       --navy-deep: #08152a;
+      --vh: 1vh; /* updated by JS for browsers without dvh support */
     }
 
     html, body { height: 100%; }
@@ -25,9 +26,13 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 100vh;       /* fallback for old browsers */
+      height: calc(var(--vh, 1vh) * 100); /* JS-driven fallback for old browsers */
+      height: 100vh;       /* static fallback */
       height: 100dvh;      /* dynamic viewport height: fixes mobile address-bar overlap */
       overflow: hidden;
+      /* Extend under the notch / punch-hole so the full-bleed image is seamless on
+         iPhone (刘海/灵动岛) and Huawei (挖孔/灵动岛) — enabled by viewport-fit=cover */
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
 
     .hero-bg {
@@ -38,9 +43,19 @@
       background-position: center;
     }
 
-    /* Portrait phones/tablets: keep the focal point (方) instead of cropping it out */
+    /* Base portrait (16:9 ~ 18:9 phones: iPhone SE, older Huawei) */
     @media (orientation: portrait) {
       .hero-bg { background-position: center 38%; }
+    }
+
+    /* Tall phones 19.5:9 / 20:9: iPhone 13–15, Huawei Mate 40/50/60, P40/50/60, nova */
+    @media (orientation: portrait) and (min-aspect-ratio: 9/19) {
+      .hero-bg { background-position: center 32%; }
+    }
+
+    /* Extra-tall 21:9+ (some Huawei foldables outer screen, slim devices) */
+    @media (orientation: portrait) and (min-aspect-ratio: 9/20) {
+      .hero-bg { background-position: center 28%; }
     }
 
     /* Ultrawide / 4K monitors: nudge the horizon so it stays pleasant */
@@ -66,5 +81,19 @@
   <div class="hero">
     <div class="hero-bg"></div>
   </div>
+
+  <script>
+    // Fallback for browsers/webviews without `dvh` support (older Huawei/HarmonyOS,
+    // older iOS Safari): recompute --vh on resize so the hero always fills the screen
+    // and avoids the address-bar / navigation-bar gap.
+    (function () {
+      function setVH() {
+        document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+      }
+      setVH();
+      window.addEventListener('resize', setVH);
+      window.addEventListener('orientationchange', setVH);
+    })();
+  </script>
 </body>
 </html>
