@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>FANG INVESTMENT</title>
   <meta name="description" content="FANG INVESTMENT (方投资) — a multi-generation family investment office connecting global capital with discipline and trust.">
 
@@ -10,89 +10,129 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230f1d3a'/%3E%3Ctext x='32' y='46' font-size='44' text-anchor='middle' fill='%23b08947' font-family='serif'%3E%E6%96%B9%3C/text%3E%3C/svg%3E">
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
     :root {
       --navy-deep: #08152a;
-      --vh: 1vh; /* updated by JS for browsers without dvh support */
+      --viewport-height: 1vh;
+      color-scheme: dark;
     }
 
-    html, body { height: 100%; }
+    html,
     body {
+      width: 100%;
+      min-width: 0;
+      height: 100%;
+      margin: 0;
+      background: var(--navy-deep);
+      overflow: hidden;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    .hero {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: calc(var(--viewport-height, 1vh) * 100);
+      padding:
+        env(safe-area-inset-top, 0)
+        env(safe-area-inset-right, 0)
+        env(safe-area-inset-bottom, 0)
+        env(safe-area-inset-left, 0);
       background: var(--navy-deep);
       overflow: hidden;
     }
 
-    .hero {
+    @supports (height: 100dvh) {
+      .hero {
+        height: 100dvh;
+      }
+    }
+
+    .hero-image {
       position: relative;
+      z-index: 1;
+      display: block;
       width: 100%;
-      height: calc(var(--vh, 1vh) * 100); /* JS-driven fallback for old browsers */
-      height: 100vh;       /* static fallback */
-      height: 100dvh;      /* dynamic viewport height: fixes mobile address-bar overlap */
-      overflow: hidden;
-      /* Extend under the notch / punch-hole so the full-bleed image is seamless on
-         iPhone (刘海/灵动岛) and Huawei (挖孔/灵动岛) — enabled by viewport-fit=cover */
-      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+      user-select: none;
+      -webkit-user-drag: none;
     }
 
-    .hero-bg {
+    .hero-backdrop {
       position: absolute;
-      inset: 0;
-      background-image: url('assets/slide-fang-hero.jpg');
-      background-size: cover;
-      background-position: center;
+      inset: -8%;
+      display: block;
+      width: 116%;
+      height: 116%;
+      object-fit: cover;
+      object-position: center;
+      filter: blur(26px) saturate(0.88);
+      opacity: 0.6;
+      transform: scale(1.04);
+      user-select: none;
+      -webkit-user-drag: none;
     }
 
-    /* Base portrait (16:9 ~ 18:9 phones: iPhone SE, older Huawei) */
-    @media (orientation: portrait) {
-      .hero-bg { background-position: center 38%; }
-    }
-
-    /* Tall phones 19.5:9 / 20:9: iPhone 13–15, Huawei Mate 40/50/60, P40/50/60, nova */
-    @media (orientation: portrait) and (min-aspect-ratio: 9/19) {
-      .hero-bg { background-position: center 32%; }
-    }
-
-    /* Extra-tall 21:9+ (some Huawei foldables outer screen, slim devices) */
-    @media (orientation: portrait) and (min-aspect-ratio: 9/20) {
-      .hero-bg { background-position: center 28%; }
-    }
-
-    /* Ultrawide / 4K monitors: nudge the horizon so it stays pleasant */
-    @media (min-aspect-ratio: 21/9) {
-      .hero-bg { background-position: center 45%; }
-    }
-
-    /* Short landscape (phones turned sideways): avoid over-cropping top/bottom */
-    @media (max-height: 480px) {
-      .hero-bg { background-position: center 40%; }
-    }
-    .hero-bg::after {
+    .hero::after {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(180deg, rgba(8,21,42,.45) 0%, rgba(8,21,42,0) 35%, rgba(8,21,42,0) 55%, rgba(8,21,42,.72) 100%),
-        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(8,21,42,.05) 0%, rgba(8,21,42,.35) 100%);
+      background: rgba(8, 21, 42, 0.18);
+      pointer-events: none;
+    }
+
+    @media (min-aspect-ratio: 3 / 2) {
+      .hero-backdrop,
+      .hero::after {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="hero-bg"></div>
-  </div>
+  <main class="hero">
+    <img
+      class="hero-backdrop"
+      src="assets/slide-fang-hero.jpg"
+      alt=""
+      aria-hidden="true"
+      decoding="async"
+    >
+    <img
+      class="hero-image"
+      src="assets/slide-fang-hero.jpg"
+      alt="FANG INVESTMENT"
+      decoding="async"
+      fetchpriority="high"
+    >
+  </main>
 
   <script>
-    // Fallback for browsers/webviews without `dvh` support (older Huawei/HarmonyOS,
-    // older iOS Safari): recompute --vh on resize so the hero always fills the screen
-    // and avoids the address-bar / navigation-bar gap.
+    // Compatibility fallback for older iOS, Android and HarmonyOS browsers.
     (function () {
-      function setVH() {
-        document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+      function syncViewportHeight() {
+        var viewport = window.visualViewport;
+        var height = viewport ? viewport.height : window.innerHeight;
+        document.documentElement.style.setProperty('--viewport-height', height * 0.01 + 'px');
       }
-      setVH();
-      window.addEventListener('resize', setVH);
-      window.addEventListener('orientationchange', setVH);
+
+      syncViewportHeight();
+      window.addEventListener('resize', syncViewportHeight, { passive: true });
+      window.addEventListener('orientationchange', syncViewportHeight, { passive: true });
+
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', syncViewportHeight, { passive: true });
+      }
     })();
   </script>
 </body>
